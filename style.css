@@ -36,8 +36,8 @@ body{
     background: conic-gradient(
         transparent 0deg,
         transparent var(--degrees),
-        white var(--degrees),
-        white 360deg
+        blue var(--degrees),
+        rgb(207, 62, 62) 360deg
         );
     position: relative;
 
@@ -79,5 +79,7 @@ body{
     border-radius: 50%;
     background-color: rgb(147, 197, 253);
     border: none;
-
+}
+.color{
+    background-color: green;
 }

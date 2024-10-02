@@ -12,46 +12,39 @@ function timerShow(){
     timerbtn.innerHTML=`${minute}:${second}`;
 }
 
-
 startpause.addEventListener('click',()=>{
     if (isPaused){
         isPaused=false;
-        startpause.innerHTML='pause';
+        startpause.classList.toggle('color');
         timer=setInterval(()=>{
-    
             if(timeleft>0){
                 timeleft--;
                 timerShow()
                 root.style.setProperty('--degrees',circleDegree())
-
-            }
+                }
             else{
-                
                 startpause.disabled=true;
                 clearInterval(timer);
-                startpause.textContent='start';
+                startpause.textContent='';
                 
             }
         },1000)}
     else {
         isPaused=true;
-        startpause.textContent='start';
+        startpause.textContent='';
         clearInterval(timer);
-    }
-
-    }
-
-)
+        startpause.classList.toggle('color');
+        
+    }})
 
 reset.addEventListener('click',()=>{
     clearInterval(timer);
     timeleft=60;
     isPaused=true;
-    startpause.textContent='start';
+    startpause.textContent='';
     root.style.setProperty('--degrees','0deg');
+    startpause.classList.remove('color');
     timerShow();
-
-
 })
 
 function circleDegree(){
