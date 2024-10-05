@@ -30,37 +30,41 @@ body{
 
 .circle{
     
-    width:30.5rem;
-    height: 30.5rem;
+    width:25.5rem;
+    height: 25.5rem;
     border-radius: 50%;
     background: conic-gradient(
         transparent 0deg,
-        transparent var(--degrees),
+        transparent var(--degrees),    
         blue var(--degrees),
-        rgb(207, 62, 62) 360deg
-        );
+        red 360deg);
     position: relative;
 
 }
 
 
 .insidecircle{
-    width:30rem ;
-    height:30rem;
+    width:25rem ;
+    height:25rem;
     border-radius: 50%;
     background-color:rgb(55 65 81 ); 
     position: absolute;
     top:2px;
     left: 2px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap:1rem;
+    transform-origin: center;
+    transform: rotate( var(--degrees));
 }
 .timer{
     font-size: 3rem;
-
+    color: rgb(191, 219 ,254);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
 }
 .changetimer{
     display: flex;
@@ -82,4 +86,16 @@ body{
 }
 .color{
     background-color: green;
+}
+
+.hand{
+    width:1rem;
+    height:1rem;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top:-5px;
+    left: 50%;
+    z-index: 10;
+   
 }
